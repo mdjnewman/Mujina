@@ -39,7 +39,7 @@ public class AuthnStatementGenerator {
         .getBuilder(AuthnContextClassRef.DEFAULT_ELEMENT_NAME);
     AuthnContextClassRef authnContextClassRef = authnContextClassRefBuilder.buildObject();
     // urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport
-    authnContextClassRef.setAuthnContextClassRef(AuthnContext.PASSWORD_AUTHN_CTX);
+    authnContextClassRef.setAuthnContextClassRef(getAuthnCtxClassRef());
 
     // Response/Assertion/AuthnStatement/AuthContext/AuthenticatingAuthority
     AuthenticatingAuthorityBuilder authenticatingAuthorityBuilder = 
@@ -62,5 +62,10 @@ public class AuthnStatementGenerator {
 
     return authnStatement;
 
+  }
+
+  private String getAuthnCtxClassRef() {
+    String idpAuthnContext = System.getProperty("IdpAuthnContext");
+    return idpAuthnContext != null ? idpAuthnContext : AuthnContext.PASSWORD_AUTHN_CTX;
   }
 }
