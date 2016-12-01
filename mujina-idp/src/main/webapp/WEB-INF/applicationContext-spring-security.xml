@@ -26,7 +26,9 @@
   <http once-per-request="false">
 
     <form-login default-target-url="/index.jsp" login-page="/login.jsp"
-                authentication-failure-handler-ref="authnFailureHandler"/>
+                authentication-failure-handler-ref="authnFailureHandler"
+                username-parameter="username"
+                password-parameter="password"/>
     <anonymous/>
     <logout/>
 
