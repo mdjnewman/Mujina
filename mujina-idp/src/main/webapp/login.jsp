@@ -50,11 +50,11 @@ ___  ___        _  _
   <table>
     <tr>
       <td>User:</td>
-      <td><input type='text' name='username' value=''></td>
+      <td><input type='text' id="username" name='username' value=''></td>
     </tr>
     <tr>
       <td>Password:</td>
-      <td><input type='password' name='password'/></td>
+      <td><input type='password' id="password" name='password'/></td>
     </tr>
     <tr>
       <td colspan='2'><input id="submit_login" name="submit" type="submit" value="Login"/></td>
